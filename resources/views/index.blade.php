@@ -37,7 +37,7 @@
                                 class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600 border border-4"
                                 name="from">
                                 @foreach ($codes as $code => $value)
-                                    <option class="py-1" {{ $code == @session('from') || $code == 'EUR' ? 'selected' : '' }}>
+                                    <option class="py-1" {{ session()->has('from') ? ($code == @session('from') ? 'selected' : '') : ($code == 'EUR' ? 'selected' : '') }}>
                                         {{ $code }}
                                     </option>
                                 @endforeach
@@ -52,7 +52,7 @@
                                 class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600 border border-4"
                                 name="to">
                                 @foreach ($codes as $code => $value)
-                                    <option class="py-1" {{ $code == @session('to') ||$code == 'USD' ? 'selected' : '' }}>
+                                    <option class="py-1" {{ session()->has('to') ? ($code == @session('to') ? 'selected' : '') : ($code == 'USD' ? 'selected' : '') }}>
                                         {{ $code }}
                                     </option>
                                 @endforeach
